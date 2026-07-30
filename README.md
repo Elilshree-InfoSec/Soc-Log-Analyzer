@@ -51,8 +51,6 @@ soc-log-analyzer/
 
 ## 📌 Current Status
 
-🚧 Project in development
-
 ✅ Completed — core features implemented and tested
 
 ## 🎯 Purpose
