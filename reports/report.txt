@@ -1,0 +1,8 @@
+SOC INCIDENT REPORT
+==============================
+Total Logs: 7
+Failed Logins: 5
+Successful Logins: 2
+
+Suspicious IPs (possible brute force):
+  192.168.1.10 - 4 failed attempts
