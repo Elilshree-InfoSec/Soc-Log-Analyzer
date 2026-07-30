@@ -55,4 +55,4 @@ soc-log-analyzer/
 
 ## 🎯 Purpose
 
-This project was built to strengthen Python programming skills while learning SOC analyst workflows such as log analysis, threat detection, and incident reporting.
+This is my first Python project, built as a hands-on way to learn about SOC (Security Operations Center) analyst work. It simulates a small piece of that workflow — parsing authentication logs, detecting suspicious login activity like brute-force attempts and account takeovers, and generating incident reports.
