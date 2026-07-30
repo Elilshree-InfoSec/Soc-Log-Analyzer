@@ -1,39 +1,44 @@
 # 🛡️ SOC Log Analyzer
 
-A beginner-friendly **Python** project that simulates the workflow of a Security Operations Center (SOC) analyst by parsing authentication logs, detecting suspicious login activity, and generating incident reports.
-
----
+A beginner-friendly Python project that simulates the workflow of a Security Operations Center (SOC) analyst by parsing authentication logs, detecting suspicious login activity, and generating incident reports.
 
 ## 🚀 Features
 
 - Parse authentication log files
 - Detect failed login attempts
-- Identify possible brute-force attacks
+- Identify brute-force attacks using a time-window (not just raw count)
+- Detect possible account takeovers (failed login followed by success)
+- Map detections to MITRE ATT&CK (T1110.001)
 - Count successful and failed logins
-- Generate investigation reports
+- Generate incident reports (text + JSON)
+- Configurable via command-line arguments
+- Unit tested with pytest
 - Beginner-friendly modular Python code
-
----
 
 ## 🛠️ Built With
 
 - Python 3
 - File Handling
 - Dictionaries
-- Functions
+- datetime
+- argparse
+- pytest
 - Modular Programming
-
----
 
 ## 📂 Project Structure
 
 ```
 soc-log-analyzer/
 │
-├── Logs/
-│   └── sample.log
+├── logs/
+│ └── sample.log
 │
 ├── reports/
+│ ├── report.txt
+│ └── alerts.json
+│
+├── tests/
+│ └── test_detector.py
 │
 ├── detector.py
 ├── parser.py
@@ -44,28 +49,25 @@ soc-log-analyzer/
 
 ---
 
+## ▶️ Usage
+
+```bash
+python main.py --file logs/sample.log --threshold 3 --window 5
+```
+
 ## 📌 Current Status
 
 🚧 Project in development
 
 ### Planned Features
 
-- [x] Log parser
-- [ ] Failed login detection
-- [ ] Brute-force detection
-- [ ] Incident report generation
-- [ ] Windows Event Log support
-- [ ] Linux authentication log support
-- [ ] HTML report export
-
----
+- Internal vs. external IP classification
+- Alert severity levels (low / medium / high)
+- Password spraying detection
+- Windows Event Log support
+- Linux authentication log support
+- HTML report export
 
 ## 🎯 Purpose
 
 This project was built to strengthen Python programming skills while learning SOC analyst workflows such as log analysis, threat detection, and incident reporting.
-
----
-
-## 📜 License
-
-MIT License
