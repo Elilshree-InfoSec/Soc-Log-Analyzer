@@ -49,24 +49,11 @@ soc-log-analyzer/
 
 ---
 
-## ▶️ Usage
-
-```bash
-python main.py --file logs/sample.log --threshold 3 --window 5
-```
-
 ## 📌 Current Status
 
 🚧 Project in development
 
-### Planned Features
-
-- Internal vs. external IP classification
-- Alert severity levels (low / medium / high)
-- Password spraying detection
-- Windows Event Log support
-- Linux authentication log support
-- HTML report export
+✅ Completed — core features implemented and tested
 
 ## 🎯 Purpose
 
