@@ -26,3 +26,8 @@ def parse_log_file(filepath):
                 "ip": ip
             })
     return entries
+
+if __name__ == "__main__":
+    data = parse_log_file("logs/sample.log")
+    for d in data:
+        print(d)
