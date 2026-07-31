@@ -1,3 +1,5 @@
+# Transforms raw log text into structured Python data 
+
 def parse_log_file(filepath):
     entries = []
     with open(filepath, "r") as file:
@@ -17,9 +19,3 @@ def parse_log_file(filepath):
                 "ip": ip
             })
     return entries
-
-
-if __name__ == "__main__":
-    data = parse_log_file("Logs/sample.log")
-    for d in data:
-        print(d)
