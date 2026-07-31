@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def parse_log_file(filepath):
     entries = []
     with open(filepath, "r") as file:
@@ -8,18 +10,19 @@ def parse_log_file(filepath):
             parts = line.split()
             if len(parts) < 5:
                 continue  # skip malformed lines
+
             date, time, username, status, ip = parts[0], parts[1], parts[2], parts[3], parts[4]
+
+            # combine date + time into one datetime object
+            try:
+                timestamp = datetime.strptime(date + " " + time, "%Y-%m-%d %H:%M:%S")
+            except ValueError:
+                continue  # skip lines with bad timestamps
+
             entries.append({
-                "date": date,
-                "time": time,
+                "timestamp": timestamp,
                 "user": username,
                 "status": status,
                 "ip": ip
             })
     return entries
-
-
-if __name__ == "__main__":
-    data = parse_log_file("Logs/sample.log")
-    for d in data:
-        print(d)
